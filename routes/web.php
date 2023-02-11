@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\UsersController;
+use \App\Http\Controllers\SpisokController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('login');
 });
+Route::get('/register', function () {
+    return view('register');
+});
+Route::get('/panel', function () {
+    return view('panel');
+});
+Route::get('/panel/add/', function () {
+    return view('panel_add');
+});
+
+
+
+//api
+Route::post('/api/user/login', [UsersController::class, 'CheckPassword']);
+Route::post('/api/user/register', [UsersController::class, 'Register']);
+
+Route::post('/api/spisok/add/', [SpisokController::class, 'AddNewItem']);
+Route::post('/api/spisok/list/', [SpisokController::class, 'GetListItem']);
+
+Route::get('/api/spisok/list/', [SpisokController::class, 'GetListItem']);

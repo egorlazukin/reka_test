@@ -31,6 +31,7 @@
             hash.value = item.split('=')[1];
           }
         });
+        
         $("#button_add_new_post").click(function(){
             $.ajax({
                 type: 'POST',

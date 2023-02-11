@@ -27,6 +27,9 @@ Route::get('/panel', function () {
 Route::get('/panel/add/', function () {
     return view('panel_add');
 });
+Route::get('/panel/update/{id}', function () {
+    return view('panel_update');
+});
 
 
 
@@ -35,6 +38,10 @@ Route::post('/api/user/login', [UsersController::class, 'CheckPassword']);
 Route::post('/api/user/register', [UsersController::class, 'Register']);
 
 Route::post('/api/spisok/add/', [SpisokController::class, 'AddNewItem']);
+Route::put('/api/spisok/update/{id_tovar}', [SpisokController::class, 'UpdateItem']);
 Route::post('/api/spisok/list/', [SpisokController::class, 'GetListItem']);
 
-Route::get('/api/spisok/list/', [SpisokController::class, 'GetListItem']);
+Route::post('/api/upload-photo/', [SpisokController::class, 'SetPhotoItem']);
+Route::get('/api/upload-photo/{id_user}', [SpisokController::class, 'UpdatePhoto']);
+
+Route::post('/api/spisok/search/tags/', [SpisokController::class, 'SearsListItemTags']);

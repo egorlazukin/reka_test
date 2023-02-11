@@ -30,6 +30,9 @@ Route::get('/panel/add/', function () {
 Route::get('/panel/update/{id}', function () {
     return view('panel_update');
 });
+Route::get('/', function () {
+    return view('register');
+});
 
 
 

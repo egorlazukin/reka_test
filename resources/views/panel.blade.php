@@ -11,6 +11,7 @@
                 <div class="input-group mb-3">
                     <input type="text" id="search" class="form-control" oninput="Sears()" oncut="Sears()" oncopy="Sears()", onpaste="Sears()" onchange="Sears()" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2">
                 </div>
+                <a href="/panel/add/">Добавить новый список</a>
                 <table class="table table-bordered">
                     <thead>
                         <tr>

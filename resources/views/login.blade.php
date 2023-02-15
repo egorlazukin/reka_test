@@ -53,7 +53,8 @@
                     }
                     else
                     {
-                        document.cookie = "hash_login=" + data['cookieID']; 
+                        document.cookie = "hash_login=" ; 
+                        document.cookie = "hash_login="+ data['cookieID'] + "; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
                         document.location.href = "/panel/"
                     }
                 }
